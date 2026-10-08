@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f2eb">
+    <title>BH Arithmetic</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="BH Arithmetic home">
+          <span class="wordmark-mark">BH</span>
+          <span>ARITHMETIC <span class="wordmark-version">/ 01</span></span>
+        </a>
+        <span class="status"><span class="status-dot"></span> READY TO CALCULATE</span>
+      </header>
+
+      <section class="calculator" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">A little logic, a clear answer</p>
+          <h1 id="page-title">Make it <span>add up.</span></h1>
+          <p class="intro-copy">Two numbers. One operation. The answer, worked out in Python.</p>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div class="number-row">
+            <label class="number-field" for="first-number">
+              <span class="field-label"><span>01</span> FIRST NUMBER</span>
+              <input id="first-number" name="first" type="number" step="any" inputmode="decimal" placeholder="0" required>
+            </label>
+            <div class="number-connector" aria-hidden="true">&</div>
+            <label class="number-field" for="second-number">
+              <span class="field-label"><span>02</span> SECOND NUMBER</span>
+              <input id="second-number" name="second" type="number" step="any" inputmode="decimal" placeholder="0" required>
+            </label>
+          </div>
+
+          <fieldset class="operation-fieldset">
+            <legend class="field-label"><span>03</span> CHOOSE AN OPERATION</legend>
+            <div class="operation-options">
+              <label class="operation-option">
+                <input type="radio" name="operation" value="+" checked>
+                <span aria-hidden="true">+</span><span class="sr-only">Addition</span>
+              </label>
+              <label class="operation-option">
+                <input type="radio" name="operation" value="-">
+                <span aria-hidden="true">−</span><span class="sr-only">Subtraction</span>
+              </label>
+              <label class="operation-option">
+                <input type="radio" name="operation" value="*">
+                <span aria-hidden="true">×</span><span class="sr-only">Multiplication</span>
+              </label>
+              <label class="operation-option">
+                <input type="radio" name="operation" value="/">
+                <span aria-hidden="true">÷</span><span class="sr-only">Division</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="calculate-button" type="submit">
+            <span>Calculate</span><span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <section class="result-panel" aria-labelledby="result-heading" aria-live="polite">
+          <div class="result-copy">
+            <p class="field-label" id="result-heading">YOUR RESULT</p>
+            <p class="result-equation" id="result-equation">Ready when you are.</p>
+          </div>
+          <output class="result-value" id="result-value" for="first-number second-number">—</output>
+        </section>
+        <p class="error-message" id="error-message" role="alert" hidden></p>
+      </section>
+
+      <footer class="page-footer">
+        <span>BUILT WITH PYTHON</span>
+        <span>SMALL TOOL, SOLID FOUNDATIONS</span>
+      </footer>
+    </main>
+  </body>
+</html>
